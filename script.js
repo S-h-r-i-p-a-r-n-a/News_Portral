@@ -65,7 +65,7 @@ function displayBlogs(articles){
         blogCard.appendChild(title);
         blogCard.appendChild(description);
         blogCard.addEventListener("click",() => {
-            window.open(article.url, "-blank");
+            window.open(article.url, "_blank");
         })
         blogContainer.appendChild(blogCard);
         
