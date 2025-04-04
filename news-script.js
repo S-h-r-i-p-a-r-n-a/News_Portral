@@ -1,4 +1,4 @@
-const apikey = 'pub_782663fd6639d84c2e2246023ffa39a14c23d'; // Replace with your key
+const apikey = 'pub_782663fd6639d84c2e2246023ffa39a14c23d'; // Replace with your valid API key
 const blogContainer = document.getElementById("blog-container");
 const searchField = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
@@ -9,7 +9,6 @@ async function fetchRandomNews() {
     const apiUrl = `https://newsdata.io/api/1/news?apikey=${apikey}&country=us&language=en`;
     const response = await fetch(apiUrl);
     const data = await response.json();
-    console.log(data);
     return data.results || [];
   } catch (error) {
     console.error("Error fetching random news", error);
@@ -17,13 +16,12 @@ async function fetchRandomNews() {
   }
 }
 
-// Fetch news based on query
+// Fetch news by search
 async function fetchNewsQuery(query) {
   try {
     const apiUrl = `https://newsdata.io/api/1/news?apikey=${apikey}&q=${query}&language=en`;
     const response = await fetch(apiUrl);
     const data = await response.json();
-    console.log(data);
     return data.results || [];
   } catch (error) {
     console.error("Error fetching news by query", error);
@@ -31,7 +29,6 @@ async function fetchNewsQuery(query) {
   }
 }
 
-// Display articles
 function displayBlogs(articles) {
   blogContainer.innerHTML = "";
   if (!articles.length) {
@@ -60,14 +57,15 @@ function displayBlogs(articles) {
     blogCard.appendChild(img);
     blogCard.appendChild(title);
     blogCard.appendChild(description);
+
     blogCard.addEventListener("click", () => {
       window.open(article.link, "_blank");
     });
+
     blogContainer.appendChild(blogCard);
   });
 }
 
-// Event listener
 searchButton.addEventListener("click", async () => {
   const query = searchField.value.trim();
   if (query !== "") {
@@ -76,7 +74,6 @@ searchButton.addEventListener("click", async () => {
   }
 });
 
-// Initial load
 (async () => {
   const articles = await fetchRandomNews();
   displayBlogs(articles);
