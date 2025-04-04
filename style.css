@@ -4,13 +4,14 @@
     }
     body{
         position: relative;
+        background-color: rgb(224, 201, 236);
     }
     .obj-width{
         max-width: 1200px;
         margin: auto;
     }
     nav{
-        background-color: #2d4c50;
+        background-color: #5727a5;
         box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3) ;
     }
 .navbar{
@@ -37,7 +38,7 @@
 }
 #search-button{
     padding: 10px 20px;
-    background-color: #138065;
+    background-color: #c228e4;
     color: #fff;
     border: none;
     font-size: 18px;
