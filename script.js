@@ -82,3 +82,4 @@ function displayBlogs(articles){
         console.error("Error fetching random news",error);
     }
 })();
+#js load
