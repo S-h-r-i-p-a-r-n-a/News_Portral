@@ -52,9 +52,9 @@ function displayBlogs(articles){
         blogCard.classList.add("blog-card");
         const img = document.createElement("img")
         img.src = article.urlToImage;
-        img.alt = article.tile;
+        img.alt = article.title;
         const title = document.createElement("h2")
-        const truncatedTitle = article.title.length>30? article.title.slice(0,30)+"....":article.tile;
+        const truncatedTitle = article.title.length>30? article.title.slice(0,30)+"....":article.title;
         title.textContent = truncatedTitle;
         const description = document.createElement("p");
         description.textContent = article.description;
@@ -82,4 +82,3 @@ function displayBlogs(articles){
         console.error("Error fetching random news",error);
     }
 })();
-#js load
